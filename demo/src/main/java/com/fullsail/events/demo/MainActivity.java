@@ -23,10 +23,11 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Setting references to user and result text fields
         mUserText = (TextView) findViewById(R.id.usertext);
         mResultText = (TextView) findViewById(R.id.resulttext);
 
-
+        //Button click listener
         Button button = (Button) findViewById(R.id.userbutton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +37,7 @@ public class MainActivity extends Activity {
             }
         });
 
+        //Item item select listener
         ListView oslist = (ListView) findViewById(R.id.oslist);
         oslist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -70,6 +72,7 @@ public class MainActivity extends Activity {
 
     //CUSTOM FUNCTIONS
     private void showResult(String result){
+        Log.i(TAG,"Updating result text.");
         mResultText.setText(result);
     }
 
